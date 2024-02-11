@@ -24,7 +24,8 @@
   position: absolute;
   z-index: -1;
   top: 9px;
-  left: -45px;
+  left: -34px;
+  transform: scale(1.5);
 }
 
 .introducao p {
