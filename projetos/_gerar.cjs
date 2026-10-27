@@ -184,9 +184,7 @@ function paginaVideo() {
     titulo: "Bruno Sobral: apresentação dos projetos em vídeo",
     descricao: "Em 2 minutos, quatro projetos meus com IA aplicada: o problema, o fluxo de dados e onde a decisão continua com uma pessoa.",
     url: BASE + "video/", imagem: BASE + "og/video.png", prefixo: "../",
-  }).replace("</head>", `<meta property="og:video" content="${BASE}video/projetos-bruno-sobral.mp4">
-<meta property="og:video:type" content="video/mp4">
-</head>`) + `<main id="conteudo" class="largura">
+  }) + `<main id="conteudo" class="largura">
 <section class="cabeca-projeto">
   <a class="voltar" href="../">Todos os projetos</a>
   <h1>Os projetos em 2 minutos</h1>
