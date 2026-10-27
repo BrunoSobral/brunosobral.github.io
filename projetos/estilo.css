@@ -299,3 +299,7 @@ html.gravando .apresentacao { margin: 0; padding: 0; max-width: none; }
 html.gravando .palco { position: fixed; inset: 0; border: 0; border-radius: 0; aspect-ratio: auto; }
 
 .baixar { margin: 14px 0 0; font-size: 15px; color: var(--suave); }
+
+/* Página do vídeo */
+.video-pagina { margin: 24px 0 56px; }
+.video-pagina video { display: block; width: 100%; max-width: 960px; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: #000; }

@@ -178,9 +178,38 @@ ${RODAPE}
 `;
 }
 
+// Página só do vídeo: o LinkedIn não aceita link direto para .mp4 no Em destaque.
+function paginaVideo() {
+  return cabeca({
+    titulo: "Bruno Sobral: apresentação dos projetos em vídeo",
+    descricao: "Em 2 minutos, quatro projetos meus com IA aplicada: o problema, o fluxo de dados e onde a decisão continua com uma pessoa.",
+    url: BASE + "video/", imagem: BASE + "og/inicio.png", prefixo: "../",
+  }).replace("</head>", `<meta property="og:video" content="${BASE}video/projetos-bruno-sobral.mp4">
+<meta property="og:video:type" content="video/mp4">
+</head>`) + `<main id="conteudo" class="largura">
+<section class="cabeca-projeto">
+  <a class="voltar" href="../">Todos os projetos</a>
+  <h1>Os projetos em 2 minutos</h1>
+  <p class="resumo">Quatro projetos meus, do problema ao fluxo de dados. Em todos, a IA propõe e uma pessoa decide.</p>
+</section>
+<section class="video-pagina" aria-label="Vídeo">
+  <video controls preload="metadata" poster="capa.jpg" playsinline>
+    <source src="projetos-bruno-sobral.mp4" type="video/mp4">
+    <a href="projetos-bruno-sobral.mp4">Baixar o vídeo (MP4)</a>
+  </video>
+  <p class="baixar"><a href="projetos-bruno-sobral.mp4" download>Baixar o vídeo (MP4, 2 min, com música)</a> · <a href="../#projetos">Ver cada projeto em detalhe</a></p>
+</section>
+</main>
+${RODAPE}
+</body>
+</html>
+`;
+}
+
 fs.writeFileSync(path.join(raiz, "index.html"), index());
+fs.writeFileSync(path.join(raiz, "video", "index.html"), paginaVideo());
 PROJETOS.forEach((p, i) => {
   fs.mkdirSync(path.join(raiz, p.id), { recursive: true });
   fs.writeFileSync(path.join(raiz, p.id, "index.html"), pagina(p, i));
 });
-console.log("ok:", 1 + PROJETOS.length, "páginas");
+console.log("ok:", 2 + PROJETOS.length, "páginas");
