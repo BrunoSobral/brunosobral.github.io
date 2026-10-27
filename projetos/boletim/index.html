@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boletim Studio: Editor de boletins executivos para analistas que não precisam saber HTML.</title>
+<meta name="description" content="Montar um boletim executivo dependia de quem sabia HTML e CSS, e cada edição podia quebrar o layout.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Boletim Studio: Editor de boletins executivos para analistas que não precisam saber HTML.">
+<meta property="og:description" content="Montar um boletim executivo dependia de quem sabia HTML e CSS, e cada edição podia quebrar o layout.">
+<meta property="og:url" content="https://brunosobral.github.io/projetos/boletim/">
+<meta property="og:image" content="https://brunosobral.github.io/projetos/og/boletim.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body class="p-boletim">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo largura">
+  <a class="nome" href="../">Bruno Sobral</a>
+  <nav aria-label="Principal"><a href="../#projetos">Projetos</a><a href="https://github.com/BrunoSobral">GitHub</a></nav>
+</header>
+<main id="conteudo" class="largura">
+<section class="cabeca-projeto">
+  <a class="voltar" href="../">Todos os projetos</a>
+  <h1>Boletim Studio</h1>
+  <p class="resumo">Editor de boletins executivos para analistas que não precisam saber HTML.</p>
+</section>
+<dl class="fatos">
+  <div><dt>O problema</dt><dd>Montar um boletim executivo dependia de quem sabia HTML e CSS, e cada edição podia quebrar o layout.</dd></div>
+  <div><dt>Onde roda</dt><dd>Executável para Windows, que roda offline. Em uso por analistas de uma área corporativa.</dd></div>
+  <div class="fato-ia"><dt>Onde a IA entra</dt><dd>A IA entrou no desenvolvimento, como par de programação. O produto roda sem IA e sem internet, de propósito: lida com dados internos.</dd></div>
+</dl>
+<section class="fluxo" aria-labelledby="t-fluxo">
+  <div class="quadro"><div data-diagrama></div></div>
+  <div>
+    <h2 id="t-fluxo" class="secao-titulo" style="font-size:24px">Como funciona</h2>
+    <p class="secao-intro" style="margin-bottom:12px">Toque num passo para ver onde ele acontece no diagrama.</p>
+    <ol class="passos">
+      <li><button type="button" data-passo="0" aria-current="true">O analista abre o executável. O Flask serve o editor só para a própria máquina.</button></li>
+      <li><button type="button" data-passo="1" aria-current="false">Ele escreve e arruma capítulos, blocos e tabelas numa grade de 12 colunas, sem tocar em HTML.</button></li>
+      <li><button type="button" data-passo="2" aria-current="false">Antes de qualquer saída, o portão confere se o documento continua dentro do contrato.</button></li>
+      <li><button type="button" data-passo="3" aria-current="false">Só o que passa segue para o renderizador. O que não passa volta com o motivo.</button></li>
+      <li><button type="button" data-passo="4" aria-current="false">O mesmo renderizador gera a prévia e a exportação. O analista revisa e decide quando enviar.</button></li>
+    </ol>
+    <div class="acoes"><button class="botao-secundario" type="button" data-reproduzir><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg>Reproduzir o fluxo</button></div>
+  </div>
+</section>
+<figure class="tela-projeto"><img src="../telas/boletim-editor.jpg" alt="Editor do Boletim com o mapa de capítulos à esquerda, a prévia no centro e o painel de ajustes à direita." loading="lazy"><figcaption>O editor: mapa à esquerda, prévia no centro, ajustes à direita. Empresa e números fictícios.</figcaption></figure>
+<figure class="tela-projeto"><img src="../telas/boletim-prod.jpg" alt="Boletim exportado com gráfico de colunas de peças impressas por mês e uma lista do que acompanhar." loading="lazy"><figcaption>O boletim exportado, igual à prévia. Empresa e números fictícios.</figcaption></figure>
+<section class="texto-projeto">
+  <div>
+    <h2>Decisões que eu defendo</h2>
+    <ul>
+      <li>Offline e sem importar HTML de fora. Nenhum script estranho chega ao boletim.</li>
+      <li>Antes de qualquer saída, um portão de validação confere o documento contra o contrato. O que não passa volta com o motivo.</li>
+      <li>Um único renderizador gera a prévia e a exportação, então o que se vê na tela é o que sai no arquivo.</li>
+      <li>Na versão nova, cada quadro é uma pasta autocontida. Quadro novo não toca em nenhum arquivo fora da própria pasta: o custo cresce em N + M, não em N × M.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Limites</h2>
+    <p>Os boletins reais e os dados ficam na empresa. Aqui aparece só a arquitetura.</p>
+    <h2>Tecnologias</h2>
+    <ul class="etiquetas"><li>Python</li><li>Flask</li><li>SQLite</li><li>HTML, CSS e JS próprios</li><li>PyInstaller</li><li>pytest</li></ul>
+  </div>
+</section>
+<nav class="proximo" aria-label="Outros projetos">
+  <a href="../brgestao/">Anterior: BrGestão Pessoal</a>
+  <a href="../brinvest/">Próximo: BrInvest</a>
+</nav>
+</main>
+<footer class="rodape largura">
+  <p>O código destes projetos é privado, porque eles lidam com dados meus ou de trabalho. Numa entrevista, mostro o código e o app funcionando.</p>
+  <p>Feito em HTML, CSS e JavaScript, sem framework, com o Claude Code como par de programação.</p>
+</footer>
+<script src="../dados.js"></script>
+<script src="../diagrama.js"></script>
+<script>
+(() => {
+  const p = PROJETOS.find((x) => x.id === "boletim");
+  const d = criarDiagrama(document.querySelector("[data-diagrama]"), p);
+  const botoes = [...document.querySelectorAll("[data-passo]")];
+  let timer;
+  const marcar = (k, animar) => {
+    d.mostrarPasso(k, animar);
+    botoes.forEach((b, j) => b.setAttribute("aria-current", j === k ? "true" : "false"));
+  };
+  botoes.forEach((b, k) => b.addEventListener("click", () => { clearInterval(timer); marcar(k, true); }));
+  document.querySelector("[data-reproduzir]").addEventListener("click", () => {
+    clearInterval(timer);
+    let k = 0;
+    marcar(k, true);
+    timer = setInterval(() => { k++; if (k >= p.passos.length) return clearInterval(timer); marcar(k, true); }, 2600);
+  });
+  marcar(0, false);
+})();
+</script>
+</body>
+</html>

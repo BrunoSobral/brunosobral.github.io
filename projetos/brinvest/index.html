@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrInvest: Mesa pessoal de análise da carteira na B3, com uma IA que mostra o custo antes de rodar.</title>
+<meta name="description" content="Acompanhar preço-teto e dividendos pedia planilha, e aproveitar os vídeos sobre investimento pedia horas assistindo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BrInvest: Mesa pessoal de análise da carteira na B3, com uma IA que mostra o custo antes de rodar.">
+<meta property="og:description" content="Acompanhar preço-teto e dividendos pedia planilha, e aproveitar os vídeos sobre investimento pedia horas assistindo.">
+<meta property="og:url" content="https://brunosobral.github.io/projetos/brinvest/">
+<meta property="og:image" content="https://brunosobral.github.io/projetos/og/brinvest.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body class="p-brinvest">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo largura">
+  <a class="nome" href="../">Bruno Sobral</a>
+  <nav aria-label="Principal"><a href="../#projetos">Projetos</a><a href="https://github.com/BrunoSobral">GitHub</a></nav>
+</header>
+<main id="conteudo" class="largura">
+<section class="cabeca-projeto">
+  <a class="voltar" href="../">Todos os projetos</a>
+  <h1>BrInvest</h1>
+  <p class="resumo">Mesa pessoal de análise da carteira na B3, com uma IA que mostra o custo antes de rodar.</p>
+</section>
+<dl class="fatos">
+  <div><dt>O problema</dt><dd>Acompanhar preço-teto e dividendos pedia planilha, e aproveitar os vídeos sobre investimento pedia horas assistindo.</dd></div>
+  <div><dt>Onde roda</dt><dd>App local no Windows, com instalador gerado pelo GitHub Actions. O celular abre pelo Wi-Fi de casa.</dd></div>
+  <div class="fato-ia"><dt>Onde a IA entra</dt><dd>O Claude lê a transcrição de um vídeo ou um documento e propõe metodologias de cálculo. O app mostra o custo estimado e só chama a IA depois da confirmação.</dd></div>
+</dl>
+<section class="fluxo" aria-labelledby="t-fluxo">
+  <div class="quadro"><div data-diagrama></div></div>
+  <div>
+    <h2 id="t-fluxo" class="secao-titulo" style="font-size:24px">Como funciona</h2>
+    <p class="secao-intro" style="margin-bottom:12px">Toque num passo para ver onde ele acontece no diagrama.</p>
+    <ol class="passos">
+      <li><button type="button" data-passo="0" aria-current="true">Você cadastra os ativos. Os dados ficam no seu PC.</button></li>
+      <li><button type="button" data-passo="1" aria-current="false">O app busca cotações e calcula preço-teto, valor justo, dividend yield e renda, sempre com a fonte.</button></li>
+      <li><button type="button" data-passo="2" aria-current="false">Para um vídeo ou documento, o app lê legenda e texto de graça e estima quanto a análise vai custar.</button></li>
+      <li><button type="button" data-passo="3" aria-current="false">Só depois da sua confirmação o texto vai ao Claude, que responde em JSON num formato fixo.</button></li>
+      <li><button type="button" data-passo="4" aria-current="false">As metodologias chegam como propostas. Você decide quais viram regra.</button></li>
+    </ol>
+    <div class="acoes"><button class="botao-secundario" type="button" data-reproduzir><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg>Reproduzir o fluxo</button></div>
+  </div>
+</section>
+<figure class="tela-projeto"><img src="../telas/brinvest-analise.jpg" alt="Tela Análise do BrInvest com cada ativo marcado como Atenção ou Manter e o motivo em uma frase." loading="lazy"><figcaption>Análise ativo a ativo, com o motivo em uma frase. Carteira fictícia.</figcaption></figure>
+<figure class="tela-projeto"><img src="../telas/brinvest-home.jpg" alt="Tela inicial do BrInvest com patrimônio, aviso de preço abaixo do preço médio e ativos que pedem atenção." loading="lazy"><figcaption>Início: patrimônio, avisos e o que pede atenção. Carteira fictícia.</figcaption></figure>
+<section class="texto-projeto">
+  <div>
+    <h2>Decisões que eu defendo</h2>
+    <ul>
+      <li>Ler é de graça: legenda do vídeo, texto do PDF e células da planilha são extraídos sem IA. A IA só entra quando vale o custo.</li>
+      <li>Toda análise mostra o custo antes e o gasto do mês depois, com aviso se passar do crédito.</li>
+      <li>Sem chave de API, dá para copiar o pedido para o claude.ai, colar a resposta de volta e importar, com custo zero.</li>
+      <li>O que a IA propõe entra como metodologia proposta. Só vira regra se eu aceitar.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Limites</h2>
+    <p>Apoio à decisão, não recomendação de investimento. Os números mostram a fonte e avisam quando falta dado.</p>
+    <h2>Tecnologias</h2>
+    <ul class="etiquetas"><li>Python</li><li>React</li><li>TypeScript</li><li>pywebview</li><li>Claude API</li><li>GitHub Actions</li><li>unittest</li></ul>
+  </div>
+</section>
+<nav class="proximo" aria-label="Outros projetos">
+  <a href="../boletim/">Anterior: Boletim Studio</a>
+  <a href="../brpubli/">Próximo: BrPubli</a>
+</nav>
+</main>
+<footer class="rodape largura">
+  <p>O código destes projetos é privado, porque eles lidam com dados meus ou de trabalho. Numa entrevista, mostro o código e o app funcionando.</p>
+  <p>Feito em HTML, CSS e JavaScript, sem framework, com o Claude Code como par de programação.</p>
+</footer>
+<script src="../dados.js"></script>
+<script src="../diagrama.js"></script>
+<script>
+(() => {
+  const p = PROJETOS.find((x) => x.id === "brinvest");
+  const d = criarDiagrama(document.querySelector("[data-diagrama]"), p);
+  const botoes = [...document.querySelectorAll("[data-passo]")];
+  let timer;
+  const marcar = (k, animar) => {
+    d.mostrarPasso(k, animar);
+    botoes.forEach((b, j) => b.setAttribute("aria-current", j === k ? "true" : "false"));
+  };
+  botoes.forEach((b, k) => b.addEventListener("click", () => { clearInterval(timer); marcar(k, true); }));
+  document.querySelector("[data-reproduzir]").addEventListener("click", () => {
+    clearInterval(timer);
+    let k = 0;
+    marcar(k, true);
+    timer = setInterval(() => { k++; if (k >= p.passos.length) return clearInterval(timer); marcar(k, true); }, 2600);
+  });
+  marcar(0, false);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrPubli: Publica no Instagram as fotos de peças impressas em 3D, com legenda escrita por IA e revisada por mim.</title>
+<meta name="description" content="Imprimir e pintar é o hobby. Tratar foto, escrever legenda e publicar à mão é o que fazia o perfil parar.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BrPubli: Publica no Instagram as fotos de peças impressas em 3D, com legenda escrita por IA e revisada por mim.">
+<meta property="og:description" content="Imprimir e pintar é o hobby. Tratar foto, escrever legenda e publicar à mão é o que fazia o perfil parar.">
+<meta property="og:url" content="https://brunosobral.github.io/projetos/brpubli/">
+<meta property="og:image" content="https://brunosobral.github.io/projetos/og/brpubli.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body class="p-brpubli">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo largura">
+  <a class="nome" href="../">Bruno Sobral</a>
+  <nav aria-label="Principal"><a href="../#projetos">Projetos</a><a href="https://github.com/BrunoSobral">GitHub</a></nav>
+</header>
+<main id="conteudo" class="largura">
+<section class="cabeca-projeto">
+  <a class="voltar" href="../">Todos os projetos</a>
+  <h1>BrPubli</h1>
+  <p class="resumo">Publica no Instagram as fotos de peças impressas em 3D, com legenda escrita por IA e revisada por mim.</p>
+</section>
+<dl class="fatos">
+  <div><dt>O problema</dt><dd>Imprimir e pintar é o hobby. Tratar foto, escrever legenda e publicar à mão é o que fazia o perfil parar.</dd></div>
+  <div><dt>Onde roda</dt><dd>App instalável (PWA) no celular, servidor Flask no Render e fotos no Supabase.</dd></div>
+  <div class="fato-ia"><dt>Onde a IA entra</dt><dd>O Claude olha todas as fotos do carrossel e escreve legenda, até 5 hashtags e texto alternativo. Não inventa detalhe que não esteja na descrição e pergunta quando não reconhece um personagem.</dd></div>
+</dl>
+<section class="fluxo" aria-labelledby="t-fluxo">
+  <div class="quadro"><div data-diagrama></div></div>
+  <div>
+    <h2 id="t-fluxo" class="secao-titulo" style="font-size:24px">Como funciona</h2>
+    <p class="secao-intro" style="margin-bottom:12px">Toque num passo para ver onde ele acontece no diagrama.</p>
+    <ol class="passos">
+      <li><button type="button" data-passo="0" aria-current="true">Você escolhe até 10 fotos e dá nome e descrição à peça.</button></li>
+      <li><button type="button" data-passo="1" aria-current="false">O servidor converte HEIC, PNG e WebP para JPEG e guarda num bucket privado.</button></li>
+      <li><button type="button" data-passo="2" aria-current="false">O Claude olha todas as fotos e devolve legenda, hashtags e texto alternativo.</button></li>
+      <li><button type="button" data-passo="3" aria-current="false">A prévia é exatamente o que vai ao ar. Você edita e confirma.</button></li>
+      <li><button type="button" data-passo="4" aria-current="false">A Meta busca as fotos por um link que vale 15 minutos e o carrossel é publicado.</button></li>
+    </ol>
+    <div class="acoes"><button class="botao-secundario" type="button" data-reproduzir><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg>Reproduzir o fluxo</button></div>
+  </div>
+</section>
+<figure class="tela-projeto"><img src="../telas/brpubli-fluxo.jpg" alt="Quatro telas do BrPubli no celular: escolher fotos, ajustar luz, legenda sugerida pela IA e publicar no Instagram." loading="lazy"><figcaption>Do celular ao Instagram em quatro telas: fotos, ajuste, legenda da IA e publicação.</figcaption></figure>
+<section class="texto-projeto">
+  <div>
+    <h2>Decisões que eu defendo</h2>
+    <ul>
+      <li>Só a API oficial da Meta. Conta segura vale mais que qualquer recurso.</li>
+      <li>Nada vai ao ar sem confirmação, e a prévia é exatamente o que será publicado.</li>
+      <li>A IA responde num esquema JSON fixo. Resposta fora do esquema vira erro claro, não post quebrado.</li>
+      <li>Se o modelo 3D é de outro designer, a legenda dá o crédito. A regra está nas instruções da IA e tem teste.</li>
+    </ul>
+  </div>
+  <div>
+    <h2>Limites</h2>
+    <p>Feito para um perfil só. As métricas da Meta chegam com até 48 horas de atraso, e o painel diz quando há pouco dado.</p>
+    <h2>Tecnologias</h2>
+    <ul class="etiquetas"><li>Python</li><li>Flask</li><li>PWA</li><li>Supabase Storage</li><li>Claude API (visão)</li><li>Instagram Graph API</li><li>Render</li><li>pytest</li></ul>
+  </div>
+</section>
+<nav class="proximo" aria-label="Outros projetos">
+  <a href="../brinvest/">Anterior: BrInvest</a>
+  <a href="../brgestao/">Próximo: BrGestão Pessoal</a>
+</nav>
+</main>
+<footer class="rodape largura">
+  <p>O código destes projetos é privado, porque eles lidam com dados meus ou de trabalho. Numa entrevista, mostro o código e o app funcionando.</p>
+  <p>Feito em HTML, CSS e JavaScript, sem framework, com o Claude Code como par de programação.</p>
+</footer>
+<script src="../dados.js"></script>
+<script src="../diagrama.js"></script>
+<script>
+(() => {
+  const p = PROJETOS.find((x) => x.id === "brpubli");
+  const d = criarDiagrama(document.querySelector("[data-diagrama]"), p);
+  const botoes = [...document.querySelectorAll("[data-passo]")];
+  let timer;
+  const marcar = (k, animar) => {
+    d.mostrarPasso(k, animar);
+    botoes.forEach((b, j) => b.setAttribute("aria-current", j === k ? "true" : "false"));
+  };
+  botoes.forEach((b, k) => b.addEventListener("click", () => { clearInterval(timer); marcar(k, true); }));
+  document.querySelector("[data-reproduzir]").addEventListener("click", () => {
+    clearInterval(timer);
+    let k = 0;
+    marcar(k, true);
+    timer = setInterval(() => { k++; if (k >= p.passos.length) return clearInterval(timer); marcar(k, true); }, 2600);
+  });
+  marcar(0, false);
+})();
+</script>
+</body>
+</html>
