@@ -36,7 +36,7 @@ function cabeca({ titulo, descricao, url, imagem, prefixo }) {
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo largura">
   <a class="nome" href="${prefixo}">Bruno Sobral</a>
-  <nav aria-label="Principal"><a href="${prefixo}#projetos">Projetos</a><a href="https://github.com/BrunoSobral">GitHub</a></nav>
+  <nav aria-label="Principal"><a href="${prefixo}#projetos">Projetos</a><a href="/">Currículo</a><a href="https://github.com/BrunoSobral">GitHub</a></nav>
 </header>
 `;
 }
@@ -88,6 +88,20 @@ function index() {
   <p class="secao-intro">Cada página mostra o problema, o fluxo passo a passo, as decisões que eu defendo e os limites de cada um.</p>
   <ul class="projetos">
 ${lista}
+  </ul>
+</section>
+<section class="largura" id="curriculo">
+  <h2 class="secao-titulo">Currículo</h2>
+  <p class="secao-intro">Desenhei o layout no Figma, num curso de UI design, e codifiquei em HTML e CSS.</p>
+  <ul class="projetos">
+  <li class="projeto p-curriculo">
+    <div>
+      <h3>Currículo em página</h3>
+      <p class="resumo">Experiência, formação e contato numa página só, que se ajusta ao celular.</p>
+      <a class="link-ver" href="/">Ver o currículo ${SETA}</a>
+    </div>
+    <a class="miniatura" href="/" tabindex="-1" aria-hidden="true"><img src="/og-curriculo.png" alt="" loading="lazy"></a>
+  </li>
   </ul>
 </section>
 </main>

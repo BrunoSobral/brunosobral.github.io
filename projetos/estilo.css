@@ -16,6 +16,7 @@
 .p-boletim { --acento: #1f63c9; --acento-fundo: #e2edfc; }
 .p-brinvest { --acento: #1b7a50; --acento-fundo: #dff3e8; }
 .p-brpubli { --acento: #b62f6d; --acento-fundo: #fbe3ee; }
+.p-curriculo { --acento: #5b4bd6; --acento-fundo: #ebe8fd; }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -26,6 +27,7 @@
   :root:not([data-theme="light"]) .p-boletim { --acento: #6fa6ff; --acento-fundo: #182a47; }
   :root:not([data-theme="light"]) .p-brinvest { --acento: #4fcb8d; --acento-fundo: #12332a; }
   :root:not([data-theme="light"]) .p-brpubli { --acento: #f07aae; --acento-fundo: #3d1a2b; }
+  :root:not([data-theme="light"]) .p-curriculo { --acento: #a99cff; --acento-fundo: #25204a; }
 }
 :root[data-theme="dark"] {
   --fundo: #121826; --superficie: #1b2333; --tinta: #e8ecf2; --suave: #9aa6b8; --linha: #2e3a4f;
@@ -35,6 +37,7 @@
 :root[data-theme="dark"] .p-boletim { --acento: #6fa6ff; --acento-fundo: #182a47; }
 :root[data-theme="dark"] .p-brinvest { --acento: #4fcb8d; --acento-fundo: #12332a; }
 :root[data-theme="dark"] .p-brpubli { --acento: #f07aae; --acento-fundo: #3d1a2b; }
+:root[data-theme="dark"] .p-curriculo { --acento: #a99cff; --acento-fundo: #25204a; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -303,3 +306,4 @@ html.gravando .palco { position: fixed; inset: 0; border: 0; border-radius: 0; a
 /* Página do vídeo */
 .video-pagina { margin: 24px 0 56px; }
 .video-pagina video { display: block; width: 100%; max-width: 960px; aspect-ratio: 16 / 9; height: auto; border-radius: 12px; background: #000; }
+.p-curriculo .miniatura img { object-position: left top; }
